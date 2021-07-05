@@ -1,4 +1,4 @@
-package mx.com.gm.domain;
+package com.gm.domain;
 
 
 import java.io.Serializable;

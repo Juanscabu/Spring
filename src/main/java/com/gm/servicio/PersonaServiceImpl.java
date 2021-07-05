@@ -1,4 +1,4 @@
-package mx.com.gm.servicio;
+package com.gm.servicio;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import mx.com.gm.dao.PersonaDao;
-import mx.com.gm.domain.Persona;
+import com.gm.dao.PersonaDao;
+import com.gm.domain.Persona;
 
 @Service
 public class PersonaServiceImpl implements PersonaService {

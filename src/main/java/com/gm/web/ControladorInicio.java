@@ -1,9 +1,8 @@
-package mx.com.gm.web;
+package com.gm.web;
 
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import mx.com.gm.domain.Persona;
-import mx.com.gm.servicio.PersonaService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -12,6 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.gm.domain.Persona;
+import com.gm.servicio.PersonaService;
 
 @Controller
 @Slf4j
@@ -26,6 +28,12 @@ public class ControladorInicio {
         log.info("ejecutando el controlador Spring MVC");
         log.info("Usuario que hizo login:" + user);
         model.addAttribute("personas", personas);
+        var saldoTotal = 0D;
+        for(var p:personas) {
+        	saldoTotal += p.getSaldo();
+        }
+        model.addAttribute("saldoTotal", saldoTotal);
+        model.addAttribute("totalClientes", personas.size());
         return "index";
     }
     

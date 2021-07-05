@@ -1,4 +1,4 @@
-package mx.com.gm.servicio;
+package com.gm.servicio;
 
 import java.util.ArrayList;
 
@@ -12,10 +12,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.gm.dao.UsuarioDao;
+import com.gm.domain.Rol;
+import com.gm.domain.Usuario;
+
 import lombok.extern.slf4j.Slf4j;
-import mx.com.gm.dao.UsuarioDao;
-import mx.com.gm.domain.Rol;
-import mx.com.gm.domain.Usuario;
 
 @Service("userDetailsService")
 @Slf4j
